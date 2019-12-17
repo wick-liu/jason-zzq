@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+CFLAGS = -Wall -Werror
+LDFLAGS = -lcunit
+
+all: demo-test
+
+demo-test: function.o function.h demo-test.o
+	gcc $^ -o $@ $(LDFLAGS)
+
+check: demo-test
+	./$<
+	@echo Done
+
+distcheck:
+	@echo
+
+clean:
+	@rm -vf *.o demo-test
+
+distclean:
+	@echo
+
