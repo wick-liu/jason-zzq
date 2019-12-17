@@ -9,8 +9,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: install
-      run: ./install.h
+    - name: setup
+      run: ./setup.sh
     - name: configure
       run: ./configure
     - name: make
